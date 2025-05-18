@@ -128,10 +128,10 @@ n_points = args.n_nodes
 i_init = args.i_init
 
 try:
-    probs_logits = torch.load(f"probs_logits_{n_points}_{i_init}.pt", map_location=device)
+    probs_logits = torch.load(f"data/probs_logits_{n_points}_{i_init}.pt", map_location=device)
 except:
     probs_logits = torch.randn(n_points, device=device)
-    torch.save(probs_logits, f"probs_logits_{n_points}_{i_init}.pt")
+    torch.save(probs_logits, f"data/probs_logits_{n_points}_{i_init}.pt")
 
 probs_logits = torch.nn.Parameter(probs_logits)
 
